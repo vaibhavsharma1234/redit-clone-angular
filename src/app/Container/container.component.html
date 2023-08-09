@@ -1,0 +1,24 @@
+<div>
+    
+    <div class="flex flex-column flex-wrap justify-content-center align-content-center mt-4 " >
+        <p-card  [style]="{ width: '70vw' }" header="add a link" >
+            <form #myForm="ngForm" (submit)="addArticle(myForm)" class=" h-15rem grid ">
+                <label class="col-12 md:col-8" for="title">Title:</label>
+                <input class="col-12 md:col-8" type="text" id="title" name="title" ngModel required pInputText  />
+                <!-- agar ngmodel nhi lgaynge toh values nhi zygi form refrence me -->
+                <label class="col-12 md:col-8" for="urlLink">url:</label>
+                <input class="col-12 md:col-8" type="text" id="urlLink" name="urlLink" ngModel required pInputText  />
+                <div  class="col-12 md:col-8 relative">
+                    <p-button type="submit" class="absolute right-0" [disabled]="!myForm.valid" label="Submit"></p-button>
+                </div>
+               
+            </form>
+        </p-card>
+        <div *ngFor="let i of  sortedArticles()">
+            <app-article [article]="i"></app-article>
+        </div>
+       
+       
+       
+    </div>
+</div>

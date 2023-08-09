@@ -1,0 +1,29 @@
+<div class="p-4 mt-4 border-2 border-200 grid w-full md:w-7 ">
+
+
+
+    <div class="bg-gray-400 col-4 text-center">
+        <p class="font-bold text-7xl">{{article.votes}}</p>
+        <h3 class="font-light text-3xl">points</h3>
+    </div>
+    <div class="col-7">
+
+       
+      
+        <a class="font-bold text-4xl no-underline" href='{{article.link}}'>
+           {{article.title}}
+        </a>
+        <div>({{article.domain()}})</div>
+      <div class="mt-2">
+        <p-button (onClick)="upvote()" styleClass="p-button-raised p-button-text" class="mr-2">upvote</p-button>
+        <p-button (onClick)="downvote()" styleClass="p-button-raised p-button-text">downvote</p-button>
+      </div>
+      
+
+
+    </div>
+
+
+
+
+</div>
